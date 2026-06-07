@@ -1,13 +1,11 @@
 // ==========================================================================
-// JAVASCRIPT: Advanced Async Event Controller & Floating Switcher (script.js)
+// JAVASCRIPT: Full Feature Vector Upgraded Application Core (script.js)
 // ==========================================================================
 
 const themeToggleBtn = document.getElementById('theme-toggle');
-const toggleIcon = themeToggleBtn.querySelector('.toggle-icon');
 const themeTooltip = document.getElementById('theme-tooltip');
 const backToTopBtn = document.getElementById('back-to-top');
 
-// 💡 HOOK FUNCTION: Updates tooltips text layers based on active state parameters
 function updateTooltipText(currentThemeState) {
     if (currentThemeState === 'dark') {
         themeTooltip.innerText = 'Switch to Light Mode';
@@ -16,37 +14,77 @@ function updateTooltipText(currentThemeState) {
     }
 }
 
-// 1. PERSISTENT THEME ENGINE (LocalStorage Tracking System)
+// 🕒 24-HOUR COMPLETE LIFECYCLE GREETING RUNTIME ENGINE SPEC
+function runTimeBasedGreetingEngine() {
+    const greetingTextNode = document.getElementById('dynamic-greeting');
+    if (!greetingTextNode) return;
+    
+    const currentSystemHour = new Date().getHours(); 
+    
+    if (currentSystemHour >= 5 && currentSystemHour < 12) {
+        greetingTextNode.innerText = 'Good Morning ☀️';
+    } else if (currentSystemHour >= 12 && currentSystemHour < 17) {
+        greetingTextNode.innerText = 'Good Afternoon 🌤️';
+    } else if (currentSystemHour >= 17 && currentSystemHour < 22) {
+        greetingTextNode.innerText = 'Good Evening 🌆';
+    } else {
+        greetingTextNode.innerText = 'Good Night 🌙'; // Absolute explicit 24h timeline seal
+    }
+}
+runTimeBasedGreetingEngine(); 
+
+// 1. PERSISTENT THEME ENGINE WITH LOCALSTORAGE TRACKING
 const savedUserThemePreference = localStorage.getItem('portfolio-theme');
 
 if (savedUserThemePreference === 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
-    toggleIcon.innerText = '☀️'; 
     updateTooltipText('dark');
 } else {
     document.documentElement.setAttribute('data-theme', 'light');
-    toggleIcon.innerText = '🌙'; 
     updateTooltipText('light');
 }
 
-// Click Trigger Intercept for Swapper Mechanics
 themeToggleBtn.addEventListener('click', function() {
     const activeCurrentTheme = document.documentElement.getAttribute('data-theme');
+    
+    themeToggleBtn.classList.add('rotate-icon');
+    setTimeout(() => themeToggleBtn.classList.remove('rotate-icon'), 400);
     
     if (activeCurrentTheme === 'light') {
         document.documentElement.setAttribute('data-theme', 'dark');
         localStorage.setItem('portfolio-theme', 'dark'); 
-        toggleIcon.innerText = '☀️';
         updateTooltipText('dark');
     } else {
         document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('portfolio-theme', 'light'); 
-        toggleIcon.innerText = '🌙';
         updateTooltipText('light');
     }
 });
 
-// 2. BACK TO TOP SCROLL ACCELERATION INTERCEPT PROTOCOLS
+// 🎛&nbsp; DYNAMIC BENTO GRID FILTER MATRIX CHANNELS
+const projectFilterTabs = document.querySelectorAll('.filter-tab');
+const portfolioProjectCards = document.querySelectorAll('.project-card');
+
+projectFilterTabs.forEach(function(currentActiveTabClicked) {
+    currentActiveTabClicked.addEventListener('click', function() {
+        document.querySelector('.filter-tab.active').classList.remove('active');
+        currentActiveTabClicked.classList.add('active');
+        
+        const selectiveTargetCategory = currentActiveTabClicked.getAttribute('data-category');
+        
+        portfolioProjectCards.forEach(function(currentCardNodeElement) {
+            const currentCardDataCategorySpec = currentCardNodeElement.getAttribute('data-project-type');
+            
+            if (selectiveTargetCategory === 'all' || currentCardDataCategorySpec === selectiveTargetCategory) {
+                currentCardNodeElement.classList.remove('hidden-node');
+            } else {
+                currentCardNodeElement.classList.add('hidden-node');
+            }
+        });
+    });
+});
+
+// 2. BACK TO TOP SCROLL LISTENERS
 window.addEventListener('scroll', function() {
     if (window.scrollY > 400) {
         backToTopBtn.classList.add('visible');
@@ -63,10 +101,11 @@ backToTopBtn.addEventListener('click', function() {
 });
 
 // ==========================================================================
-// NATIVE ASYNCHRONOUS COMMUNICATIONS (FORM SUBMISSION PROCESSES)
+// ASYNCHRONOUS FORM COMMUNICATOR & INLINE TOAST TIMEOUT CONTROL
 // ==========================================================================
 const contactForm = document.getElementById('contact-form');
 const submitBtn = document.getElementById('submit-btn');
+const inlineFormFeedbackBox = document.getElementById('form-feedback'); 
 
 contactForm.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -74,6 +113,9 @@ contactForm.addEventListener('submit', function(event) {
     submitBtn.innerText = 'Sending Message... 🚀';
     submitBtn.style.opacity = '0.7';
     submitBtn.disabled = true; 
+    
+    inlineFormFeedbackBox.className = 'form-feedback-message';
+    inlineFormFeedbackBox.style.display = 'none';
 
     const formFieldsData = new FormData(contactForm);
     const formspreeProductionEndpoint = "https://formspree.io/f/xaqkarek";       
@@ -87,8 +129,14 @@ contactForm.addEventListener('submit', function(event) {
     })
     .then(function(serverResponseDataFeedback) {
         if (serverResponseDataFeedback.ok === true) {
-            alert('Brilliant, Itesh! Your data has securely bypassed background servers and landed directly in your email box! 🚀');
+            inlineFormFeedbackBox.innerText = 'Success! Your message transmitted securely to Itesh Kumar\'s operational gateway box! 🚀';
+            inlineFormFeedbackBox.classList.add('success-toast');
+            
             contactForm.reset(); 
+            
+            setTimeout(() => {
+                inlineFormFeedbackBox.style.display = 'none';
+            }, 5000);
         } else {
             alert('Operational Latency Check: Form configuration mismatch detected. Please review endpoint token ID values.');
         }

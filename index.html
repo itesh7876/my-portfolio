@@ -37,6 +37,7 @@
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
+            <a href="https://github.com/itesh7876" target="_blank" class="nav-social-link">GitHub ↗</a>
         </nav>
     </header>
 
@@ -46,13 +47,25 @@
                 <span class="dot"></span> Open to Global Opportunities
             </div>
 
-            <img src="assets/images/profile.png" alt="Itesh Kumar Yadav - Professional Frontend Developer and Technical Executor Profile Portrait" class="profile-pic">
+            <img src="assets/images/profile.png" alt="Itesh Kumar Yadav Portrait" class="profile-pic">
 
-            <h1 id="hero-main-heading">Hi, I am <span class="highlight">Itesh Kumar</span><br><span class="title-sub">Frontend Engineer &amp; Technical Executor</span></h1>
+            <!-- 🕒 TIME-BASED DYNAMIC GREETINGS HOOK -->
+            <h1 id="hero-main-heading"><span id="dynamic-greeting">Hi</span>, I am <span class="highlight">Itesh Kumar</span><br><span class="title-sub">Frontend Engineer &amp; Technical Executor</span></h1>
             
             <p>A precision-driven <strong>Frontend Engineer</strong> dedicated to translating high-level design specifications into highly optimized, responsive, and cross-browser compliant digital interfaces daily.</p>
 
-            <a href="assets/docs/resume.pdf" download="Itesh_Resume.pdf" class="btn-resume" aria-label="Download Itesh Kumar's Professional Resume Document PDF">Download Resume</a>
+            <div class="hero-cta-group">
+                <a href="assets/docs/resume.pdf" download="Itesh_Resume.pdf" class="btn-resume" aria-label="Download Itesh Kumar's Professional Resume Document PDF">Download Resume</a>
+            </div>
+
+            <div class="skills-matrix-container">
+                <span class="matrix-tag">HTML5 / Semantic Web</span>
+                <span class="matrix-tag">CSS3 / Flexbox / Grid</span>
+                <span class="matrix-tag">JavaScript / ES6+</span>
+                <span class="matrix-tag">Asynchronous Fetch API</span>
+                <span class="matrix-tag">Git / GitHub Ecosystem</span>
+                <span class="matrix-tag">CI/CD Production Pipelines</span>
+            </div>
         </section>
 
         <section id="about" aria-labelledby="about-heading">
@@ -63,34 +76,97 @@
         <section id="projects" aria-labelledby="projects-heading">
             <h2>Production-Grade Deployments</h2>
             
+            <!-- 🎛️ INTERACTIVE PROJECTS CATEGORY FILTER TABS -->
+            <div class="filter-tabs-container">
+                <button class="filter-tab active" data-category="all">All Architecture</button>
+                <button class="filter-tab" data-category="frontend">Frontend UI</button>
+                <button class="filter-tab" data-category="core">Core Engines</button>
+            </div>
+            
             <div class="project-container">
-                <!-- PROJECT CARD 1: CLICKABLE DIGITAL BUSINESS CARD -->
-                <a href="https://itesh7876.github.io/digital-business-card/" target="_blank" class="project-card clickable-card" aria-label="View Itesh Kumar's Live Digital Business Card Project">
+                <!-- PROJECT CARD 1: DIGITAL BUSINESS CARD -->
+                <div class="project-card" data-project-type="frontend">
                     <div class="card-tag">Live Deployment 🌐</div>
                     <h3>Responsive Digital Business Card</h3>
                     <p>Designed and deployed a modern, pixel-perfect digital business card utilizing precise CSS Box Model mechanics, vertical flexbox distributions, and cross-browser semantic structuring.</p>
-                    <span class="project-link-text">View Live Project →</span>
-                </a>
+                    
+                    <div class="tech-stack-wrapper">
+                        <span class="tech-chip">HTML5</span>
+                        <span class="tech-chip">CSS Flexbox</span>
+                        <span class="tech-chip">Mobile Responsive</span>
+                    </div>
+                    
+                    <div class="project-actions-row">
+                        <a href="https://itesh7876.github.io/digital-business-card/" target="_blank" class="project-action-link view-live">View Live →</a>
+                        <a href="https://github.com/itesh7876/digital-business-card" target="_blank" class="project-action-link view-code">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            Source Code
+                        </a>
+                    </div>
+                </div>
 
                 <!-- PROJECT CARD 2: API PIPELINE -->
-                <div class="project-card">
+                <div class="project-card" data-project-type="core">
                     <div class="card-tag">Core Engine</div>
                     <h3>Asynchronous API Transmission Pipeline</h3>
                     <p>Engineered a robust JavaScript client-side communication node executing dynamic FormData schema packet delivery to cloud endpoints via the Fetch API, fully managing response state promises.</p>
+                    
+                    <div class="tech-stack-wrapper">
+                        <span class="tech-chip">JavaScript ES6</span>
+                        <span class="tech-chip">Fetch API</span>
+                        <span class="tech-chip">FormData</span>
+                        <span class="tech-chip">Async / Promises</span>
+                    </div>
+
+                    <div class="project-actions-row">
+                        <span class="project-action-link disabled-link">Engine Node ⚙️</span>
+                        <a href="https://github.com/itesh7876" target="_blank" class="project-action-link view-code">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            Source Code
+                        </a>
+                    </div>
                 </div>
 
                 <!-- PROJECT CARD 3: UI ARCHITECTURE -->
-                <div class="project-card">
+                <div class="project-card" data-project-type="frontend">
                     <div class="card-tag">UI/UX Architecture</div>
                     <h3>Fluid Layout Responsive Controller</h3>
                     <p>Developed dynamic, cross-platform grid structures applying absolute CSS Box Model parameters, flexbox wrapping distributions, and media breakpoint orchestration for adaptive rendering layouts.</p>
+                    
+                    <div class="tech-stack-wrapper">
+                        <span class="tech-chip">CSS Custom Variables</span>
+                        <span class="tech-chip">Media Queries</span>
+                        <span class="tech-chip">Fluid Architecture</span>
+                    </div>
+
+                    <div class="project-actions-row">
+                        <span class="project-action-link disabled-link">Layout Spec 📐</span>
+                        <a href="https://github.com/itesh7876" target="_blank" class="project-action-link view-code">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            Source Code
+                        </a>
+                    </div>
                 </div>
 
                 <!-- PROJECT CARD 4: DOM MANIPULATION -->
-                <div class="project-card">
+                <div class="project-card" data-project-type="core">
                     <div class="card-tag">DOM Manipulation</div>
                     <h3>Reactive State Interceptor Tool</h3>
                     <p>Programmed standard JavaScript event monitoring loops to intercept rigid browser execution protocols, enabling dynamic single-page rendering states without layout re-draw mutations.</p>
+                    
+                    <div class="tech-stack-wrapper">
+                        <span class="tech-chip">DOM Events</span>
+                        <span class="tech-chip">Event Interception</span>
+                        <span class="tech-chip">State Control</span>
+                    </div>
+
+                    <div class="project-actions-row">
+                        <span class="project-action-link disabled-link">DOM Script 💾</span>
+                        <a href="https://github.com/itesh7876" target="_blank" class="project-action-link view-code">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            Source Code
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -117,23 +193,30 @@
                 </div>
 
                 <button type="submit" id="submit-btn">Transmit Message</button>
+                <div id="form-feedback" class="form-feedback-message"></div>
             </form>
         </section>
     </main>
 
-    <!-- 🌗 NEW UI/UX LOCATION: FLOATING SYSTEM TOGGLE ISLAND (BOTTOM LEFT) -->
+    <!-- FLOATING SYSTEM TOGGLE ISLAND -->
     <div class="theme-wrapper">
         <span id="theme-tooltip" class="theme-tooltip-box">Switch to Dark Mode</span>
         <button id="theme-toggle" class="floating-theme-btn" aria-label="Toggle Light and Dark Theme">
-            <span class="toggle-icon">🌙</span>
+            <!-- Inline SVG Moon vector -->
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <!-- Inline SVG Sun vector -->
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.22" x2="5.64" y2="17.78"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
         </button>
     </div>
 
-    <!-- 🔝 DYNAMIC BACK TO TOP BUTTON (BOTTOM RIGHT) -->
     <button id="back-to-top" class="back-to-top-btn" aria-label="Scroll Back to Top">↑</button>
 
     <footer>
         <p>© 2026 Itesh Kumar. All Rights Reserved. Engineered for Semantic SEO & Enterprise Performance Scalability.</p>
+        <div class="footer-social-group">
+            <a href="https://github.com/itesh7876" target="_blank">GitHub</a> — 
+            <a href="https://www.linkedin.com/in/itesh-kumar-rajdev-yadav-a2a932331/" target="_blank">LinkedIn</a>
+        </div>
     </footer>
 
     <script src="script.js"></script>
