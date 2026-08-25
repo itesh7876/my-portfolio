@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevLog Terminal Hub | Itesh Kumar Yadav</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/images/logo_1.png">
+</head>
+<body>
+
+    <div id="scroll-progress-indicator"></div>
+
+    <header>
+        <div class="logo">
+            <img src="assets/images/logo_1.png" alt="Branding Mark"> Itesh Kr Yadav  
+        </div>
+        <nav>
+            <a href="index.html">← Back to Main Dashboard</a>
+            <!-- SECURITY ATTACHMENT EXPLICIT EVENT MAP FIX -->
+            <button id="auth-gate-trigger" class="nav-social-link" style="margin-left: 20px; cursor: pointer !important; font-size: 13px; font-weight:700; background:var(--bg-contrast); border:1px solid var(--border-color); color:var(--text-primary); transition:all 0.2s;">🔒 Admin Lock</button>
+        </nav>
+    </header>
+
+    <main style="padding: 60px 10%;">
+        <section id="devlog">
+            <h2 style="text-align: center; font-size:36px; font-weight:800; margin-bottom:10px;">Today I Learned (TIL) / My DevLog</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 50px;">
+                A production-grade cloud timeline tracking my architectural updates, micro-projects, and coding solutions.
+            </p>
+            
+            <div class="timeline-container" id="dynamic-devlog-feed"></div>
+        </section>
+
+        <!-- SECURE LIVE CLOUD UPDATE INTAKE PORTAL -->
+        <div id="admin-panel" style="display: none; background: var(--bg-surface); padding: 30px; border: 2px solid var(--accent-blue); margin: 40px auto; max-width:700px; border-radius: 12px; box-shadow: var(--shadow-lg);">
+            <h3 style="margin-bottom: 15px;">Welcome Back, Itesh! Transmit New Learning Stack 🚀</h3>
+            <form id="admin-post-form">
+                <input type="text" id="post-title" placeholder="Lesson/Concept Title" required style="margin-bottom:12px; width:100%; padding:12px; border-radius:6px; border:1px solid var(--border-color); background:var(--bg-base); color:var(--text-primary);"><br>
+                <textarea id="post-concept" placeholder="What did you execute/learn? (The Concept Breakdown)" required style="margin-bottom:12px; width:100%; padding:12px; border-radius:6px; border:1px solid var(--border-color); background:var(--bg-base); color:var(--text-primary); height:90px;"></textarea><br>
+                <input type="text" id="post-architecture" placeholder="System Design Mapping (e.g., UI -> API -> DB)" style="margin-bottom:12px; width:100%; padding:12px; border-radius:6px; border:1px solid var(--border-color); background:var(--bg-base); color:var(--text-primary);"><br>
+                <textarea id="post-code" placeholder="Code Snippet or Production Implementation" style="margin-bottom:12px; width:100%; padding:12px; border-radius:6px; border:1px solid var(--border-color); background:var(--bg-base); color:var(--text-primary); font-family:monospace; height:120px;"></textarea><br>
+                <button type="submit" style="background: var(--accent-gradient); color:white; padding:12px 24px; border:none; border-radius:6px; font-weight:700; width:100%; cursor:pointer;">Broadcast Live to Cloud Tiers</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Itesh Kumar. All Rights Reserved. Decoupled Semantic Learning Feed Architecture.</p>
+        <div class="footer-social-group">
+            <a href="https://github.com/itesh7876" target="_blank">GitHub</a> — 
+            <a href="https://www.linkedin.com/in/itesh-kumar-rajdev-yadav-a2a932331/" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
